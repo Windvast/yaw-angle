@@ -6,15 +6,18 @@ function orbitRotateFn(){
     orbitAngle+=orbitSpeed
 }
 function selfRotateFn(){
+    selfAngle = 0.5*($('#rangeBar')[0].value)
     $('.planet').css('transform', `rotate(${selfAngle}deg)`)
-    selfAngle+=1
+    // selfAngle+=1
 }
 
 
 
 window.onload=function(){
-let orbitRotate = this.setInterval(orbitRotateFn,24)
-let selfRotate = this.setInterval(selfRotateFn,24)
+
+    $('#title').html('animation')
+    let orbitRotate = this.setInterval(orbitRotateFn,24)
+    let selfRotate = this.setInterval(selfRotateFn,24)
 
 
 

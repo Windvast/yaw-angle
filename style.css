@@ -19,7 +19,7 @@
 .planet_shaft{
     width: 20px;
     height: 50%;
-    /* border: 1px solid blue; */
+    border: 1px solid blue;
     position: absolute;
     left: 50%;
     margin-left: -12px;
@@ -28,11 +28,13 @@
     /* animation: autoRotate 2s infinite linear; */
 }
 .planet{
-    width: 20px;
+    width: 30px;
     height: 10px;
     background-color: green;
     position: absolute;
-    top: -20px;
+    top: -15px;
+    left: -5px;
+    transform-origin: 100% 50%;
 }
 
 @keyframes autoRotate{

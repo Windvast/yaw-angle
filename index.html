@@ -9,16 +9,43 @@
     <script src="main.js"></script>
 </head>
 <body>
-
-    <div class="container">
-        <p id="title">placeholder</p>
-        <div class="orbit">     
-            <div class="planet_shaft">
-                <div class="planet"></div>
-            </div>  
+    <div class="wrapper">
+    <div class="header">Grip and Drift, which is faster?</div>
+    <div class="main">
+        <div class="container_left">
+            <p class="title title_left">placeholder</p>
+            <div class="orbit">     
+                <div class="planet_shaft">
+                    <div class="planet" id="planet_left"></div>
+                </div>  
+            </div>
+            <div>
+                <input id="rangeBar_left" type="range" value="0" min="1" max="180">
+                <p class="desc desc_left">摩擦系数</p>
+            </div>
+            
         </div>
-        <input id="rangeBar" type="range" value="0" min="1" max="180">
+        <div class="container_middle">
+            <input id="speedBar" type="range" value="1" min="20" max="120">
+            <p class="desc desc_middle">速度</p>
+        </div>
+        <div class="container_right">
+            <p class="title title_right">placeholder</p>
+            <div class="orbit">     
+                <div class="planet_shaft">
+                    <div class="planet" id="planet_right"></div>
+                </div>  
+            </div>
+            <div>
+                <input id="rangeBar_right" type="range" value="0" min="1" max="180">
+                <p class="desc desc_right">摩擦系数</p>
+            </div>
+
+        </div>
+
     </div>
+    </div>
+
 
 
     <!--

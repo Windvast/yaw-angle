@@ -1,17 +1,64 @@
-.container{
-    margin: 100px auto;
-    width: 400px;
-    height: 300px;
-    border: 1px solid black;
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper{
+    height: 90vh;
+    width: 95vw;
+    margin: auto;
+    top: 5vh;
+    position: relative;
+    background-color: silver;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    
+    border: 1px black solid;
+}
+
+.header{
+    border: 1px black solid;
+    position: relative;
+    font-size: 30px;
+}
+.main{
+    height: 80vh;
+    width: 90vw;
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #cccccc;
+}
+
+.container_left, .container_right{
+    position: relative;
+    width: 40vw;
+    height: 75vh;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #998363;
+}
+.container_middle{
+    display: flex;
+    flex-direction: column;
+}
+p{
+    border: 1px solid black;
+    text-align: center;
+}
+#speedBar{
+    display: block;
+    border: 1px solid black;
+    -webkit-appearance: slider-vertical;
 }
 .orbit{
-    width: 150px;
-    height: 150px;
+    width: 45vh;
+    height: 45vh;
     border: 2px solid black;
     border-radius: 50%;
     position: relative;
@@ -28,12 +75,14 @@
     /* animation: autoRotate 2s infinite linear; */
 }
 .planet{
-    width: 30px;
-    height: 10px;
-    background-color: green;
+    width: 116px;
+    height: 58px;
+    /* background-color: green; */
+    background-image: url(Yaris_WRC_2018\ sketch.png);
+    background-size: contain;
     position: absolute;
-    top: -15px;
-    left: -5px;
+    top: -58px;
+    left: -116px;
     transform-origin: 100% 50%;
 }
 

@@ -10,35 +10,37 @@
 </head>
 <body>
     <div class="wrapper">
-    <div class="header">Grip and Drift, which is faster?</div>
+    <div class="header"><strong>图解漂移</strong><br/>偏航角与附着系数</div>
     <div class="main">
         <div class="container_left">
-            <p class="title title_left">placeholder</p>
+            <p class="title title_left">偏航角<br/>0°</p>
             <div class="orbit">     
                 <div class="planet_shaft">
                     <div class="planet" id="planet_left"></div>
+                    <div class="planet_shadow" id="planet_left_shadow"></div>
                 </div>  
             </div>
-            <div>
-                <input id="rangeBar_left" type="range" value="0" min="1" max="180">
-                <p class="desc desc_left">摩擦系数</p>
+            <div class="fr_cof">
+                <input id="rangeBar_left" type="range" value="100" min="1" max="100">
+                <p class="desc desc_left">附着系数<br/>1.00</p>
             </div>
             
         </div>
         <div class="container_middle">
-            <input id="speedBar" type="range" value="1" min="20" max="120">
+            <div id="startBtn" class="start_btn"></div>
+            <input id="speedBar" type="range" value="50" min="1" max="100">
             <p class="desc desc_middle">速度</p>
         </div>
         <div class="container_right">
-            <p class="title title_right">placeholder</p>
+            <p class="title title_right">偏航角<br/>0° </p>
             <div class="orbit">     
                 <div class="planet_shaft">
                     <div class="planet" id="planet_right"></div>
                 </div>  
             </div>
-            <div>
-                <input id="rangeBar_right" type="range" value="0" min="1" max="180">
-                <p class="desc desc_right">摩擦系数</p>
+            <div class="fr_cof">
+                <input id="rangeBar_right" type="range" value="100" min="1" max="100">
+                <p class="desc desc_right">附着系数<br/>1.00</p>
             </div>
 
         </div>

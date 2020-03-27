@@ -9,46 +9,66 @@
     margin: auto;
     top: 5vh;
     position: relative;
-    background-color: silver;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    border: 1px black solid;
+    font-family: Microsoft Yahei, Arial, Helvetica, sans-serif;
+    font-size: large;
 }
 
 .header{
-    border: 1px black solid;
+    /* border: 1px black solid; */
     position: relative;
     font-size: 30px;
+    text-align: center;
 }
 .main{
     height: 80vh;
     width: 90vw;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #cccccc;
+   
 }
 
 .container_left, .container_right{
     position: relative;
     width: 40vw;
     height: 75vh;
+    padding: 2vh;
     border: 1px solid black;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: #998363;
+    background-color: #ccc;
+}
+.fr_cof{
+    top:40vh;
+    position: absolute;
+    z-index: 2;
 }
 .container_middle{
+    height: 30vh;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.start_btn{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-image: url(ENGINE_START.png);
+    background-size: cover;
+}
+.start_btn:hover{
+    cursor: pointer;
 }
 p{
-    border: 1px solid black;
+    /* border: 1px solid black; */
     text-align: center;
 }
 #speedBar{
@@ -59,31 +79,51 @@ p{
 .orbit{
     width: 45vh;
     height: 45vh;
-    border: 2px solid black;
+    border: 10vh solid #222;
     border-radius: 50%;
     position: relative;
+}
+.orbit::after{
+    width: 55vh;
+    height: 55vh;
+    content: '';
+    display: block;
+    border: #ffca28 2px dashed;
+    border-radius: 50%;
+    margin-left: -5vh;
+    margin-top: -5vh;
+
 }
 .planet_shaft{
     width: 20px;
     height: 50%;
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     position: absolute;
     left: 50%;
     margin-left: -12px;
     transform-origin: 50% 100%;
-    /* transform: rotate(-40deg); */
-    /* animation: autoRotate 2s infinite linear; */
 }
+
 .planet{
     width: 116px;
     height: 58px;
     /* background-color: green; */
-    background-image: url(Yaris_WRC_2018\ sketch.png);
+    background-image: url(Yaris_WRC_2018_sketch.png);
     background-size: contain;
     position: absolute;
     top: -58px;
-    left: -116px;
+    left: -50px;
     transform-origin: 100% 50%;
+}
+
+.planet_shadow{
+    width: 116px;
+    height: 58px;
+    border: chocolate 2px solid;
+    position: absolute;
+    top: -58px;
+    left: -50px;
+    display: none;
 }
 
 @keyframes autoRotate{

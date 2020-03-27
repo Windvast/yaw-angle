@@ -20,39 +20,57 @@ window.onload=function(){
  */
 
  $(document).ready(function(){
-    let orbitSpeed=1
     let orbitAngle = 0
-    let selfAngle = 0
-    // let orbitSpeed= setInterval(getSpeed,24)
-    // let orbitRotate = setInterval(orbitRotateFn,24)
-    // let selfRotate = setInterval(selfRotateFn,24)
-    $('#speedBar').click(function(){
-        $('.header').html(this.value)
-        orbitSpeed=this.value
-        console.log(this.value)
-    })
-    let setStart = setInterval(START,24)
-    function START(){
-        function getSpeed(){
-            let orbitSpeed=$('#speedBar')[0].value
-            $('.header').html(orbitSpeed)
-        }
+  
+    function startFn(){
+
         function orbitRotateFn(){
-            $('.planet_shaft').css('transform', `rotate(${orbitAngle}deg)`)
+            let orbitSpeed=$('#speedBar').val()
+            orbitAngle+=0.02*orbitSpeed
+           
             
-            orbitAngle+=0.025*orbitSpeed
-            orbitSpeed=$('#speedBar')[0].value
+            $('.planet_shaft').css('transform', `rotate(${orbitAngle}deg)`)
         }
         function selfRotateFn(){
-            selfAngleLeft = 0.3*($('#rangeBar_left')[0].value)
-            selfAngleRight = 0.3*($('#rangeBar_right')[0].value)
+            let frictionLeft = (1*$('#rangeBar_left').val()+10) / 110
+            let frictionRight = (1*$('#rangeBar_right').val()+10) / 110
+            let linearSpeed = $('#speedBar').val()*1
+            let selfAngleLeft = yawAngleCalc(linearSpeed, frictionLeft)
+            let selfAngleRight = yawAngleCalc(linearSpeed, frictionRight)
             $('#planet_left').css('transform', `rotate(${selfAngleLeft}deg)`)
             $('#planet_right').css('transform', `rotate(${selfAngleRight}deg)`)
+            $('.title_left').html('偏航角<br/>'+selfAngleLeft.toFixed(2)+'° '+'<br/>')
+            $('.title_right').html('偏航角<br/>'+selfAngleRight.toFixed(2)+'°'+'<br/>')
+            $('.desc_left').html('附着系数<br/>'+frictionLeft.toFixed(2))
+            $('.desc_right').html('附着系数<br/>'+frictionRight.toFixed(2))
+            $('.desc_middle').html('Speed<br/>'+linearSpeed+'kph')
         }
-        // let speed=getSpeed()
         orbitRotateFn()
         selfRotateFn()
     }
+
+    function yawAngleCalc(speed, frCof, radius=100){
+        let roCof = -1*frCof/40+13/400
+        let yawAngle = Math.atan(speed*speed/3.6/3.6/10/radius/(frCof+roCof))*180 / Math.PI
+        return yawAngle
+    }
+
+    let startBtn = $('#startBtn')
+    let started = 0
+    let setStart
+    startBtn.click(function(){
+        
+        if(!started){
+            setStart = setInterval(startFn,24)
+            started = 1
+        }else{
+            clearInterval(setStart)
+            console.log('clear')
+            started = 0
+        }
+    })
+    
+
 
 
     

@@ -31,6 +31,7 @@ window.onload=function(){
             
             $('.planet_shaft').css('transform', `rotate(${orbitAngle}deg)`)
         }
+
         function selfRotateFn(){
             let frictionLeft = (1*$('#rangeBar_left').val()+10) / 110
             let frictionRight = (1*$('#rangeBar_right').val()+10) / 110
@@ -43,7 +44,7 @@ window.onload=function(){
             $('.title_right').html('偏航角<br/>'+selfAngleRight.toFixed(2)+'°'+'<br/>')
             $('.desc_left').html('附着系数<br/>'+frictionLeft.toFixed(2))
             $('.desc_right').html('附着系数<br/>'+frictionRight.toFixed(2))
-            $('.desc_middle').html('Speed<br/>'+linearSpeed+'kph')
+            $('.desc_middle').html('速度<br/>'+linearSpeed+'kph')
         }
         orbitRotateFn()
         selfRotateFn()
@@ -58,8 +59,8 @@ window.onload=function(){
     let startBtn = $('#startBtn')
     let started = 0
     let setStart
+
     startBtn.click(function(){
-        
         if(!started){
             setStart = setInterval(startFn,24)
             started = 1
